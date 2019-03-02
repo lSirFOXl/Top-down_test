@@ -50,6 +50,8 @@ public class CharacterControllerEX : MonoBehaviour {
 		}
 
 		v = Input.GetAxis("Vertical");
+		if(v < 0) v = 0;
+
 		if(Input.GetKey(KeyCode.A)){
 			Quaternion deltaRotation = Quaternion.Euler(new Vector3(0, -rotationSpeed, 0) * Time.deltaTime);
 			body.MoveRotation(transform.rotation * deltaRotation);
